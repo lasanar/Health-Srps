@@ -1,0 +1,254 @@
+<html lang="en">
+<head>
+    <title>Health Prediction System</title>
+    <link rel="stylesheet" href="../static/styleSheet.css">
+    <style>
+        /* Splash Screen Styles */
+        #splashScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #C59E77;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1s ease;
+        }
+
+        .welcome-banner {
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+        }
+
+        .entry-points {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .entry-button {
+            padding: 15px 30px;
+            background: #EFE6DD;
+            color: #4a4a4a;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: transform 0.3s ease;
+        }
+
+        .entry-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hide main content initially */
+        .main-content {
+            display: none;
+        }
+    </style>
+</head>
+<body style="background-color:#EFE6DD">
+    <!-- Splash Screen -->
+    <div id="splashScreen">
+        <div class="welcome-banner">
+            <h1 style="font-size: 2.5em; margin-bottom: 1rem;">Welcome to Afya Guard</h1>
+            <p style="font-size: 1.2em;">Your Personal Stroke Risk Assessment Platform</p>
+        </div>
+        
+        <div class="entry-points">
+            <button class="entry-button" onclick="showMainContent()">Start Assessment</button>
+            <button class="entry-button" onclick="location.href='#dataoverview'">View Statistics</button>
+            <button class="entry-button" onclick="window.open('https://jamanetwork.com/', '_blank')">Research</button>
+        </div>
+    </div>
+
+    <!-- Main Content (original content wrapped) -->
+    <div class="main-content">
+        <!-- Original Navigation and Form Content Here -->
+        <!-- ... (keep all your original nav and form code exactly as it was) ... -->
+        <html lang="eng">
+            <header>
+                <title>Prediction Form</title>
+                <link rel="stylesheet" href="../static/styleSheet.css">
+            </header>
+            <body style="background-color:#EFE6DD">
+                <!-- Navigation Bar -->
+                <nav>
+                    <ul class="navigation" style="background:#C59E77">
+                        <li><a href="dataoverview" style="color:#FFFFFF">Data Overview</a></li>
+                        <li><a href="https://www.nextstepincare.org/" target="_blank" style="color:#FFFFFF"><img src="../static/paramedic.png" height="30px"></a></li>
+                        <li><a href="https://my1health.com/hospital/kenya/nairobi/nairobi-west-hospital-neurology-department" target="_blank" style="color:#FFFFFF"><img src="../static/paramedic%20lima.png" height="30px"></a></li>
+                        <li><a href="mailto:atekaderrick01y@gmail.com" target="_blank" style="color:#FFFFFF">Email</a></li>
+                        <li><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2804474" target="_blank" style="color:#FFFFFF">Article</a></li>
+                    </ul>
+                </nav>
+        
+        
+                <!-- Prediction Form -->
+                <form>
+                    <div class="page-row">
+                        <!-- Column 1 -->
+                        <div class="column">
+                            <h3>Gender</h3>
+                            <div class="small-row">
+                                <div class="radio-group">
+                                    <input type="radio" id="male" value="Male" name="gender" required><label for="male">Male</label><input type="radio" id="female" value="Female" name="gender" required><label for="female">Female</label><input type="radio" id="other" value="Other" name="gender" required><label for="other">Other</label>
+                                </div>
+                            </div>
+        
+                            <h3>Age</h3>
+                            <div class="small-row">
+                                <input type="number" min="0" max="130" placeholder="Age" name="age" id="age" class="text-input" step="1" required>
+                            </div>
+        
+                            <h3>Hypertension</h3>
+                            <div class="small-row">
+                                <div class="radio-group">
+                                    <input type="radio" id="hyp-true" value="1" name="hypertension" required><label for="hyp-true">Yes</label><input type="radio" id="hyp-false" value="0" name="hypertension" required><label for="hyp-false">No</label>
+                                </div>
+                            </div>
+        
+                            <h3>Heart Disease</h3>
+                            <div class="small-row">
+                                <div class="radio-group">
+                                    <input type="radio" id="heart-true" value="1" name="heart-disease" required><label for="heart-true">Yes</label><input type="radio" id="heart-false" value="0" name="heart-disease" required><label for="heart-false">No</label>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Column 2 -->
+                        <div class="column">
+                            <h3>Diabetes</h3>
+                            <div class="small-row">
+                                <div class="radio-group">
+                                    <input type="radio" id="diabetes-true" value="1" name="diabetes" required><label for="diabetes-true">Yes</label><input type="radio" id="diabetes-false" value="0" name="diabetes" required><label for="diabetes-false">No</label>
+                                </div>
+                            </div>
+        
+                            <h3>Marital Status</h3>
+                            <div class="small-row">
+                                <div class="radio-group">
+                                    <input type="radio" id="marriage-true" value="1" name="marriage" required><label for="marriage-true">Married/Previously Married</label><input type="radio" id="marriage-false" value="0" name="marriage" required><label for="marriage-false">Never Married</label>
+                                </div>
+                            </div>
+        
+                            <h3>Work Environment</h3>
+                            <div class="small-row">
+                                <select name="work" id="work" class="dropdown-list" required>
+                                    <option disabled selected value>-- Select --</option>
+                                    <option value="Private">Private</option>
+                                    <option value="Self-employed">Self-Employed</option>
+                                    <option value="Govt_job">Government Job</option>
+                                    <option value="Never_worked">Never Worked</option>
+                                    <option value='children'>I'm a Child</option>
+                                </select>
+                            </div>
+        
+                            <h3>Residential Environment</h3>
+                            <div class="small-row">
+                                <div class="radio-group">
+                                    <input type="radio" id="rural" value="1" name="environment" required><label for="rural">Rural</label><input type="radio" id="urban" value="0" name="environment" required><label for="urban">Urban</label>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Column 3 -->
+                        <div class="column">
+                            <h3>Height</h3>
+                            <div class="small-row">
+                                <input type="number" min="0" max="12" placeholder="Feet" name="feet" id="feet" class="text-input" step="0.1" required>
+                                <input type="number" min="0" max="11.99" placeholder="Inches" name="inches" id="inches" class="text-input" step="0.1" required>
+                            </div>
+        
+                            <h3>Weight</h3>
+                            <div class="small-row">
+                                <input type="number" min="0" max="1000" placeholder="Pounds" name="weight" id="weight" class="text-input" step="0.1" required>
+                            </div>
+        
+                            <h3>Smoking Habits</h3>
+                            <div class="small-row">
+                                <select name="smoke" id="smoke" class="dropdown-list" required>
+                                    <option disabled selected value>-- Select --</option>
+                                    <option value="smokes">Smoker</option>
+                                    <option value="formerly smoked">Previous Smoker</option>
+                                    <option value="never smoked">Never Smoked</option>
+                                </select>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="small-row">
+                                <button type="submit" class="button-submit" onclick="formResults();">Submit Responses</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+        
+            </body>
+        
+            <script>
+                function formResults(){
+                    var gender, age, hypertension, heartDisease, diabetes, marriage, work, environment, diabetes, height, weight, smoke;
+                    gender = document.getElementById("gender").value;
+                    age = document.getElementById("age").value;
+                    hypertension = document.getElementById("hypertension").value;
+                    heartDisease = document.getElementById("heart-disease").value;
+                    diabetes = document.getElementById("diabetes").value;
+                    marriage = document.getElementById("marriage").value;
+                    work = document.getElementById("work").value;
+                    environment = document.getElementById("environment").value;
+                    diabetes = document.getElementById("diabetes").value;
+                    height = document.getElementById("height").value;
+                    weight = document.getElementById("weight").value;
+                    smoke = document.getElementById("smoke").value;
+        
+                    document.write(gender);
+                    document.write(age);
+                    document.write(hypertension);
+                    document.write(heartDisease);
+                    document.write(diabetes);
+                    document.write(marriage);
+                    document.write(work);
+                    document.write(environment);
+                    document.write(diabetes);
+                    document.write(height);
+                    document.write(weight);
+                    document.write(smoke);
+                }
+            </script>
+        </html>
+        
+    </div>
+
+    <script>
+        // Splash Screen Functionality
+        function showMainContent() {
+            const splash = document.getElementById('splashScreen');
+            const main = document.querySelector('.main-content');
+            
+            splash.style.opacity = '0';
+            
+            setTimeout(() => {
+                splash.style.display = 'none';
+                main.style.display = 'block';
+            }, 1000);
+        }
+
+        // Auto-hide after 8 seconds if user doesn't interact
+        setTimeout(showMainContent, 8000);
+
+        // Keep original formResults function
+        function formResults() {
+            // ... (keep your original formResults code exactly as it was) ...
+        }
+    </script>
+</body>
+</html>
